@@ -17,21 +17,21 @@ d000000000O,  o.  'l c000c     kKl..'   ''OK:''.  OK.c0d.  .Ox'.:Kx  kK.  :Ko  O
 ''')
 print(text)
 print('[?] How many codes do you want?')
-sayi = input('>')
-if  sayi.isdigit() == False:
+count = input('>')
+if count.isdigit() == False:
     print('[!] Software ran into a problem. Exiting in 5 seconds.')
     time.sleep(5)
-elif int(sayi) < 1:
+elif int(count) < 1:
     print('[!] Software ran into a problem. Exiting in 5 seconds.')
     time.sleep(5)
 else:
     start = time.time()
     with open("codes.txt","w") as f:
-        for i in range(int(sayi)):
+        for i in range(int(count)):
             kod = '-'.join(''.join(random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(5)) for _ in range(3))
             print(kod)
             print(kod, file=f)
     end = time.time()
-    sure = str((end - start))[:5]
-    print(f'[!] Successfully generated {sayi} codes in {sure} seconds and created a file named "codes.txt". Press ENTER to exit.')
+    ct = str((end - start))[:5]
+    print(f'[!] Successfully generated {count} codes in {ct} seconds and created a file named "codes.txt". Press ENTER to exit.')
     input()
